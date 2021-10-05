@@ -76,7 +76,8 @@
                         <div class="flex items-center">
                             <div class="c-secondary text-sm mr-2 text-sm">Berakhir dalam
                             </div>
-                            <div class="bg-primary-gradient text-white py-1 px-2 text-xs rounded-full">04 : 32 : 33
+                            <div class="bg-primary-gradient text-white py-1 px-2 text-xs rounded-full"id="timeFlashDeal"><span id="hours-flash"></span> : <span
+                                id="minutes-flash"> </span> : <span id="seconds-flash"></span>
                             </div>
                         </div>
                         <a href="javascript:void(0);" class="text-sm c-primary font-semibold">Lihat Semua</a>
@@ -98,18 +99,7 @@
                                 <div class="progress-flashsale">
                                     <div class="progress-flashsale-bar" style="width:20%;"></div>
                                 </div>
-                                <div class="text-sm">Tersisa 8</div>
-                                <!-- <div class="product-list--sale">
-                                    <div class="flex justify-between">
-                                        <div class="flex items-center">
-                                            <img src="assets/image/icons/star-solid.png">
-                                            <div class="rate">4.9 (125 terjual)</div>
-                                        </div>
-                                        <button type="button" class="btn-wishlist-list-product">
-                                            <i class="ai-heart"></i>
-                                        </button>
-                                    </div>
-                                </div> -->
+                                <div class="text-sm">Tersisa 8</div>                              
                             </div>
                         </div>
                         <div class="product-list width-product-list">
@@ -455,6 +445,46 @@
             $('.slider-filter-product-homepage button').removeClass('active');
             $(evt).addClass('active');
         }
+
+        function getTimeRemaining(endtime) {
+            var t = Date.parse(endtime) - Date.parse(new Date());
+            var seconds = Math.floor((t / 1000) % 60);
+            var minutes = Math.floor((t / 1000 / 60) % 60);
+            var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+
+            return {
+                'total': t,
+                'hours': hours,
+                'minutes': minutes,
+                'seconds': seconds
+            };
+        }
+
+        function initializeClockFlashSale(id, endtime) {
+            var clock = document.getElementById(id);
+
+            var hoursSpan = clock.querySelector('#hours-flash');
+            var minutesSpan = clock.querySelector('#minutes-flash');
+            var secondsSpan = clock.querySelector('#seconds-flash');
+
+            function updateClockFlash() {
+                var t = getTimeRemaining(endtime);
+
+                hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+                minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+                secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+                if (t.total <= 0) {
+                    clearInterval(timeinterval);
+                }
+            }
+
+            updateClockFlash();
+            var timeinterval = setInterval(updateClockFlash, 1000);
+        }
+        var deadlineFlashSale = new Date(Date.parse(new Date()) + 08 * 60 * 60 * 1000);
+        initializeClockFlashSale('timeFlashDeal', deadlineFlashSale);
+
     </script>
 </body>
 
