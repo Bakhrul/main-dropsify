@@ -326,7 +326,7 @@ body {
     }
 }
 
-@media(max-width:360px) {
+@media(max-width:350px) {
     .product-list .product-list--image-box img {
         height: 160px;
     }
