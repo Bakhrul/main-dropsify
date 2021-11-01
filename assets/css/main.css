@@ -1,5 +1,6 @@
 body {
     background: #F0F2F5;
+    touch-action: manipulation;
     font-family: 'Nunito', sans-serif !important;
 }
 
@@ -64,8 +65,8 @@ body {
 /* hamburger icon */
 
 .nav-toggle {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
@@ -181,13 +182,13 @@ body {
 
 .product-list .product-list--title {
     font-weight: bold;
-    font-size: 15px;
+    font-size: 14px;
     word-break: break-all;
     text-overflow: ellipsis;
     display: -webkit-box;
     overflow: hidden;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
     white-space: normal;
 }
 
@@ -206,32 +207,32 @@ body {
 .product-list .product-list--discount .percent {
     background: linear-gradient(180deg, #FFB300 0%, #FF9100 100%);
     padding: 2px 6px;
-    font-size: 11px;
+    font-size: 10px;
     color: #fff;
     border-radius: 5px;
     text-align: center;
 }
 
 .product-list .product-list--discount .value {
-    font-size: 12px;
+    font-size: 11px;
     text-decoration-line: line-through;
     color: #B8C1CC;
 }
 
 .product-list .product-list--price {
-    font-size: 14px;
+    font-size: 13px;
     color: #1B252F;
 }
 
 .product-list .product-list--sale .rate {
-    font-size: 12px;
+    font-size: 11px;
     padding-left: 5px;
     color: #B8C1CC;
     padding-top: 2px;
 }
 
 .width-product-list {
-    width: 190px;
+    width: 148px;
 }
 
 .product-list .product-list--sale {
@@ -263,7 +264,7 @@ body {
 }
 
 .slider-flashsale-product .slick-slide {
-    margin-left: 20px;
+    margin-left: 15px;
 }
 
 /* the parent */
@@ -302,23 +303,23 @@ body {
 
 @media(max-width:380px) {
     .product-list .product-list--title {
-        font-size: 14px;
-    }
-
-    .product-list .product-list--discount .percent {
-        font-size: 10px;
-    }
-
-    .product-list .product-list--discount .value {
-        font-size: 11px;
-    }
-
-    .product-list .product-list--price {
         font-size: 13px;
     }
 
+    .product-list .product-list--discount .percent {
+        font-size: 9px;
+    }
+
+    .product-list .product-list--discount .value {
+        font-size: 10px;
+    }
+
+    .product-list .product-list--price {
+        font-size: 12px;
+    }
+
     .product-list .product-list--sale .rate {
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .product-list .product-list--image-box img {
@@ -410,17 +411,66 @@ a {
     width: 100%;
     transition: 0.5s;
     z-index: 9999;
-    background: linear-gradient(139.56deg, #5EB9E4 1.08%, #2F74E6 102.3%) !important;
-}
-
-.nav-group-fixed .nav-toggle span {
-    background: #fff !important;
-}
-
-.nav-group-fixed .nav-right .icon {
-    color: #fff !important;
+    background-color: #F5F8FF !important;
 }
 
 .nav-group-fixed .justify-between {
     padding: 15px 1.25rem !important;
+}
+
+.background-gradient-secondary {
+    background: linear-gradient(180deg, #FFB300 0%, #FF9100 100%);
+}
+
+.sidebar {
+    min-height: 100vh;
+    height: 100%;
+    background: #F5F8FF;
+    position: fixed;
+    top: 0;
+    width: 0;
+    overflow-y: auto;
+    max-width: 400px;
+    transition: 0.5s;
+    z-index: 999999;
+}
+
+.sidebar .sidebar-header {
+    background: #F5F8FF;
+}
+
+.btn-login {
+    background: #FFFFFF;
+    border-radius: 16px;
+    font-weight: bold;
+    padding: 10px 5px;
+    font-size: 14px;
+    border: 1px #2F74E6 solid;
+    color: #2F74E6;
+    width: 100%;
+}
+
+.btn-register {
+    background: linear-gradient(139.56deg, #5EB9E4 1.08%, #2F74E6 102.3%);
+    color: #fff;
+    border-radius: 16px;
+    font-weight: 600;
+    padding: 10px 5px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.sidebar .sidebar-menu li {
+    border-bottom: 2px #F5F8FF solid;
+}
+
+.sidebar .sidebar-body {
+    background: #fff;
+}
+.sidebar-open{
+    overflow: hidden;
+}
+.sidebar-open .sidebar{
+    width: 90% !important;
+    transition: 1s;
 }

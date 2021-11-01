@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
     <title>Document</title>
     <link href="https://unpkg.com/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
@@ -13,34 +13,131 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-        <link rel="stylesheet" href="assets/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="assets/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body>
     <div class="flex justify-center">
         <div class="main-wrapper">
-            
-                <nav class="nav-group">
-                    <div class="p-5 flex justify-between items-center">
-                        <div class="nav-left">
-                            <button class="nav-toggle" type="button">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </button>
+            <nav class="nav-group">
+                <div class="p-4 flex justify-between items-center">
+                    <div class="nav-left">
+                        <button class="nav-toggle" type="button" onclick="showSidebar()">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                    <div class="nav-right">
+                        <a href="javascript:void(0);" class="mr-4"><i class="ai-search icon"></i></a>
+                        <a href="javascript:void(0);" class="mr-4"><i class="ai-whatsapp-fill icon"></i></a>
+                        <a href="javascript:void(0);" class="relative">
+                            <div class="w-4 h-4 absolute left-3 rounded-full background-gradient-secondary text-white z-10 text-center flex justify-center items-center"
+                                style="font-size: 9px !important;top:-10px">2</div>
+                            <i class="ai-shopping-bag icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            <div class="sidebar shadow-md">
+                <div class="sidebar-header p-3">
+                    <div class="flex justify-end">
+                        <button type="button" onclick="hideSidebar()" class="c-primary"><i
+                                class="ai-cross"></i></button>
+                    </div>
+                    <div class="flex mt-8 mb-5 items-center w-full">
+                        <div>
+                            <div style="width: 60px; height:60px;"><img src="assets/image/icons/person_icon.png"
+                                    style="width: 60px; height:60px;" class="rounded-full"></div>
                         </div>
-                        <div class="nav-right">
-                            <a href="javascript:void(0);" class="mr-4"><i class="ai-search icon"></i></a>
-                            <a href="javascript:void(0);" class="mr-4"><i class="ai-whatsapp-fill icon"></i></a>
-                            <a href="javascript:void(0);"><i class="ai-shopping-bag icon"></i></a>
+                        <div class="flex w-full ml-3">
+                            <button type="button" class="btn-login mr-1">Masuk</button>
+                            <button type="button" class="btn-register ml-1">Register</button>
                         </div>
                     </div>
-                </nav>
-            
+                </div>
+                <div class="sidebar-body">
+                    <ul class="sidebar-menu">
+                        <li>
+                            <a href="javascript:void(0);" class="flex justify-between w-full p-3">
+                                <div class="flex items-center">
+                                    <img src="assets/image/icons/riwayat_pesanan_icon.svg">
+                                    <span class="ml-3 text-sm">Riwayat Pesanan</span>
+                                </div>
+                                <i class="ai-chevron-right text-gray-400"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="flex justify-between w-full p-3">
+                                <div class="flex items-center">
+                                    <img src="assets/image/icons/terakhir_dilihat_icon.svg">
+                                    <span class="ml-3 text-sm">Terakhir dilihat</span>
+                                </div>
+                                <i class="ai-chevron-right text-gray-400"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="flex justify-between w-full p-3">
+                                <div class="flex items-center">
+                                    <img src="assets/image/icons/favourite_detail_icon.svg">
+                                    <span class="ml-3 text-sm">Favorit</span>
+                                </div>
+                                <i class="ai-chevron-right text-gray-400"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="flex justify-between w-full p-3">
+                                <div class="flex items-center">
+                                    <img src="assets/image/icons/voucher_icon.svg">
+                                    <span class="ml-3 text-sm">Voucher</span>
+                                </div>
+                                <i class="ai-chevron-right text-gray-400"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="flex justify-between w-full p-3">
+                                <div class="flex items-center">
+                                    <img src="assets/image/icons/penghasilan_dropshipper_icon.svg">
+                                    <span class="ml-3 text-sm">Penghasilan Saya</span>
+                                </div>
+                                <i class="ai-chevron-right text-gray-400"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="flex justify-between w-full p-3">
+                                <div class="flex items-center">
+                                    <img src="assets/image/icons/katalog_saya_icon.svg">
+                                    <span class="ml-3 text-sm">Katalog Saya</span>
+                                </div>
+                                <i class="ai-chevron-right text-gray-400"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="flex justify-between w-full p-3">
+                                <div class="flex items-center">
+                                    <img src="assets/image/icons/dropshify_academy.svg">
+                                    <span class="ml-3 text-sm">Dropshify Academy</span>
+                                </div>
+                                <i class="ai-chevron-right text-gray-400"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="flex justify-between w-full p-3">
+                                <div class="flex items-center">
+                                    <img src="assets/image/icons/pengaturan_icon.svg">
+                                    <span class="ml-3 text-sm">Pengaturan</span>
+                                </div>
+                                <i class="ai-chevron-right text-gray-400"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
             <main class="mt-1">
                 <section>
-                    <div class="slider-banner-homepage ml-5">
+                    <div class="slider-banner-homepage ml-3">
                         <img src="assets/image/banner/banner1.png" class="banner-item">
                         <img src="https://bakhrul.github.io/preview_bukalapak/assets/image/background-promo.webp"
                             class="banner-item">
@@ -50,39 +147,91 @@
                     </div>
                     <div class="slick-slider-banner-homepage-dots"></div>
                 </section>
-                <section class="">
-                    <h5 class="text-lg font-bold px-5 pt-3">Kategori</h5>
-                    <div class="slider-categories-product ml-5 mt-3">
-                        <a class="p-3 ml-3 rounded-md text-sm bg-white font-semibold c-secondary"
-                            href="javascript:void(0);">Sepatu
-                            Pria</a>
-                        <a class="p-3 ml-3 rounded-md text-sm bg-white font-semibold c-secondary"
-                            href="javascript:void(0);">Sepatu Wanita</a>
-                        <a class="p-3 ml-3 rounded-md text-sm bg-white font-semibold c-secondary"
-                            href="javascript:void(0);">Jam Tangan Pria</a>
-                        <a class="p-3 ml-3 rounded-md text-sm bg-white font-semibold c-secondary"
-                            href="javascript:void(0);">Jam Tangan Wanita</a>
-                        <a class="p-3 ml-3 rounded-md text-sm bg-white font-semibold c-secondary"
-                            href="javascript:void(0);">Tas Pria</a>
-                        <a class="p-3 ml-3 rounded-md text-sm bg-white font-semibold c-secondary"
-                            href="javascript:void(0);">Tas Wanita</a>
+                <section class="p-3">
+                    <div class="flex flex-wrap">
+                        <div class="w-1/4 p-2">
+                            <div class="flex flex-col items-center">
+                                <img src="assets/image/icons/sepatu_pria_icon.svg">
+                                <div class="text-xs pt-2 font-semibold text-center">Sepatu
+                                    Pria</div>
+                            </div>
+                        </div>
+                        <div class="w-1/4 p-2">
+                            <div class="flex flex-col items-center">
+                                <img src="assets/image/icons/sepatu_wanita_icon.svg">
+                                <div class="text-xs pt-2 font-semibold text-center">Sepatu
+                                    Wanita</div>
+                            </div>
+                        </div>
+                        <div class="w-1/4 p-2">
+                            <div class="flex flex-col items-center">
+                                <img src="assets/image/icons/jam_tangan_pria_icon.svg">
+                                <div class="text-xs pt-2 font-semibold text-center">Jam Tangan
+                                    Pria</div>
+                            </div>
+                        </div>
+                        <div class="w-1/4 p-2">
+                            <div class="flex flex-col items-center">
+                                <img src="assets/image/icons/jam_tangan_wanita_icon.svg">
+                                <div class="text-xs pt-2 font-semibold text-center">Jam Tangan
+                                    Wanita</div>
+                            </div>
+                        </div>
+                        <div class="w-1/4 p-2">
+                            <div class="flex flex-col items-center">
+                                <img src="assets/image/icons/tas_pria_icon.svg">
+                                <div class="text-xs pt-2 font-semibold text-center">Tas Pria</div>
+                            </div>
+                        </div>
+                        <div class="w-1/4 p-2">
+                            <div class="flex flex-col items-center">
+                                <img src="assets/image/icons/tas_wanita_icon.svg">
+                                <div class="text-xs pt-2 font-semibold text-center">Tas Wanita</div>
+                            </div>
+                        </div>
+                        <div class="w-1/4 p-2">
+                            <div class="flex flex-col items-center">
+                                <img src="assets/image/icons/aksesoris_icon.svg">
+                                <div class="text-xs pt-2 font-semibold text-center">Aksesoris</div>
+                            </div>
+                        </div>
+                        <div class="w-1/4 p-2">
+                            <div class="flex flex-col items-center">
+                                <img src="assets/image/icons/lainnya_icon.svg">
+                                <div class="text-xs pt-2 font-semibold text-center">Lainnya</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="p-3">
+                    <div class="p-3 bg-white rounded-xl">
+                        <div class="flex items-center">
+                            <div><img src="assets/image/icons/penghasilan_tambahan_icon.svg" width="60px"></div>
+                            <div class="ml-4">
+                                <div class="text-sm font-bold">Mau penghasilan tambahan?</div>
+                                <div class="text-sm pt-2 text-gray-500">Daftar menjadi dropshiper di Dropshify dan mulai
+                                    dapatkan uang dengan mudah</div>
+                                <button type="button" class="btn-register-dropshipper">Daftar Sekarang</button>
+                            </div>
+                        </div>
                     </div>
                 </section>
                 <section>
-                    <div class="pt-5 px-5 pb-3 mt-3">
+                    <div class="pt-5 px-3 pb-3 mt-3">
                         <img src="assets/image/icons/flashsale.png">
                     </div>
-                    <div class="flex justify-between px-5 flex-wrap">
+                    <div class="flex justify-between px-3 flex-wrap">
                         <div class="flex items-center">
                             <div class="c-secondary text-sm mr-2 text-sm">Berakhir dalam
                             </div>
-                            <div class="bg-primary-gradient text-white py-1 px-2 text-xs rounded-full"id="timeFlashDeal"><span id="hours-flash"></span> : <span
-                                id="minutes-flash"> </span> : <span id="seconds-flash"></span>
+                            <div class="bg-primary-gradient text-white py-1 px-2 text-xs rounded-full"
+                                id="timeFlashDeal"><span id="hours-flash"></span> : <span id="minutes-flash"> </span> :
+                                <span id="seconds-flash"></span>
                             </div>
                         </div>
                         <a href="javascript:void(0);" class="text-sm c-primary font-semibold">Lihat Semua</a>
                     </div>
-                    <div class="slider-flashsale-product ml-5 mt-5 mb-5">
+                    <div class="slider-flashsale-product ml-3 mt-5 mb-5">
                         <div class="product-list width-product-list">
                             <div class="product-list--image-box">
                                 <img src="assets/image/product/sample-product.png">
@@ -99,7 +248,7 @@
                                 <div class="progress-flashsale">
                                     <div class="progress-flashsale-bar" style="width:20%;"></div>
                                 </div>
-                                <div class="text-sm">Tersisa 8</div>                              
+                                <div class="text-xs">Tersisa 8</div>
                             </div>
                         </div>
                         <div class="product-list width-product-list">
@@ -107,7 +256,7 @@
                                 <img src="assets/image/product/sample-product.png">
                             </div>
                             <div class="product-list--body">
-                                <div class="product-list--title">Nike Air-Vapomax Orange Putih</div>
+                                <div class="product-list--title">Nike Air-Vapomax</div>
                                 <div class="product-list--discount">
                                     <span class="percent">10%</span>
                                     <span class="value">Rp1.700.000</span>
@@ -118,7 +267,7 @@
                                 <div class="progress-flashsale">
                                     <div class="progress-flashsale-bar" style="width:80%;"></div>
                                 </div>
-                                <div class="text-sm">Tersisa 8</div>
+                                <div class="text-xs">Tersisa 8</div>
                             </div>
                         </div>
                         <div class="product-list width-product-list">
@@ -137,7 +286,7 @@
                                 <div class="progress-flashsale">
                                     <div class="progress-flashsale-bar" style="width:30%;"></div>
                                 </div>
-                                <div class="text-sm">Tersisa 8</div>
+                                <div class="text-xs">Tersisa 8</div>
 
                             </div>
                         </div>
@@ -157,27 +306,134 @@
                                 <div class="progress-flashsale">
                                     <div class="progress-flashsale-bar" style="width:50%;"></div>
                                 </div>
-                                <div class="text-sm">Tersisa 8</div>
+                                <div class="text-xs">Tersisa 8</div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <section class="p-5">
-                    <div class="p-3 bg-white rounded-xl">
+                <section>
+                    <div class="flex justify-between px-3 flex-wrap">
                         <div class="flex items-center">
-                            <div><img src="assets/image/icons/icon-money-calculate.png" width="60px"></div>
-                            <div class="ml-4">
-                                <div class="text-sm font-bold">Mau penghasilan tambahan?</div>
-                                <div class="text-sm pt-2 text-gray-500">Daftar menjadi dropshiper di Dropshify dan mulai
-                                    dapatkan uang dengan mudah</div>
-                                <button type="button" class="btn-register-dropshipper">Daftar Sekarang</button>
+                            <h5 class="text-lg font-bold">Produk Pilihan</h5>
+                        </div>
+                        <a href="javascript:void(0);" class="text-sm c-primary font-semibold">Lihat Semua</a>
+                    </div>
+                    <div class="slider-flashsale-product ml-3 mt-5 mb-5">
+                        <div class="product-list width-product-list">
+                            <div class="product-list--image-box">
+                                <img src="assets/image/product/sample-product.png">
+                            </div>
+                            <div class="product-list--body">
+                                <div class="product-list--title">Nike Air-Vapomax</div>
+                                <div class="product-list--discount">
+                                    <span class="percent">10%</span>
+                                    <span class="value">Rp1.700.000</span>
+                                </div>
+                                <div class="product-list--price">
+                                    Rp1.530.000
+                                </div>
+                                <div class="product-list--sale">
+                                    <div class="flex justify-between">
+                                        <div class="flex items-center">
+                                            <img src="assets/image/icons/star-solid.png">
+                                            <div class="rate">4.9 (125 terjual)</div>
+                                        </div>
+                                        <button type="button" class="btn-wishlist-list-product">
+                                            <i class="ai-heart"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-list width-product-list">
+                            <div class="product-list--image-box">
+                                <img src="assets/image/product/sample-product.png">
+                            </div>
+                            <div class="product-list--body">
+                                <div class="product-list--title">Nike Air-Vapomax</div>
+                                <div class="product-list--discount">
+                                    <span class="percent">10%</span>
+                                    <span class="value">Rp1.700.000</span>
+                                </div>
+                                <div class="product-list--price">
+                                    Rp1.530.000
+                                </div>
+                                <div class="product-list--sale">
+                                    <div class="flex justify-between">
+                                        <div class="flex items-center">
+                                            <img src="assets/image/icons/star-solid.png">
+                                            <div class="rate">4.9 (125 terjual)</div>
+                                        </div>
+                                        <button type="button" class="btn-wishlist-list-product">
+                                            <i class="ai-heart"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-list width-product-list">
+                            <div class="product-list--image-box">
+                                <img src="assets/image/product/sample-product.png">
+                            </div>
+                            <div class="product-list--body">
+                                <div class="product-list--title">Nike Air-Vapomax</div>
+                                <div class="product-list--discount">
+                                    <span class="percent">10%</span>
+                                    <span class="value">Rp1.700.000</span>
+                                </div>
+                                <div class="product-list--price">
+                                    Rp1.530.000
+                                </div>
+                                <div class="product-list--sale">
+                                    <div class="flex justify-between">
+                                        <div class="flex items-center">
+                                            <img src="assets/image/icons/star-solid.png">
+                                            <div class="rate">4.9 (125 terjual)</div>
+                                        </div>
+                                        <button type="button" class="btn-wishlist-list-product">
+                                            <i class="ai-heart"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="product-list width-product-list">
+                            <div class="product-list--image-box">
+                                <img src="assets/image/product/sample-product.png">
+                            </div>
+                            <div class="product-list--body">
+                                <div class="product-list--title">Nike Air-Vapomax</div>
+                                <div class="product-list--discount">
+                                    <span class="percent">10%</span>
+                                    <span class="value">Rp1.700.000</span>
+                                </div>
+                                <div class="product-list--price">
+                                    Rp1.530.000
+                                </div>
+                                <div class="product-list--sale">
+                                    <div class="flex justify-between">
+                                        <div class="flex items-center">
+                                            <img src="assets/image/icons/star-solid.png">
+                                            <div class="rate">4.9 (125 terjual)</div>
+                                        </div>
+                                        <button type="button" class="btn-wishlist-list-product">
+                                            <i class="ai-heart"></i>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
+
                 <section class="">
-                    <h5 class="text-lg font-bold pt-3 px-5">Semua Produk</h5>
-                    <div class="slider-filter-product-homepage ml-5 mt-3 mb-2">
+                    <div class="flex justify-between  pt-3 px-3">
+                        <h5 class="text-lg font-bold">Semua Produk</h5>
+                        <button type="button" class="outline-none shadow-none"><img
+                                src="assets/image/icons/filter_icon.svg"></button>
+                    </div>
+                    <div class="slider-filter-product-homepage ml-3 mt-3 mb-2">
                         <button class="p-3 ml-3 rounded-md text-sm bg-white font-semibold c-secondary active"
                             onclick="setFilter(this)">Semua</button>
                         <button class="p-3 ml-3 rounded-md text-sm bg-white font-semibold c-secondary"
@@ -193,7 +449,8 @@
                             onclick="setFilter(this)">Paling Banyak
                             Diminati</button>
                     </div>
-                    <div class="p-5 mx-auto h-full flex flex-wrap" style="padding:15px !important;">
+                    <div class="p-3 mx-auto h-full flex flex-wrap"
+                        style="padding-left:5px !important;padding-right: 5px !important;">
                         <div class="xl:w-2/4 lg:w-2/4 md:w-2/4 sm:w-2/4 grid-system-product p-2">
                             <div class="product-list">
                                 <div class="product-list--image-box">
@@ -362,37 +619,36 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="px-5 pb-32">
-                        <button type="button" class="btn btn-load-more-product">Lihat Semua</button>
                     </div>
                 </section>
             </main>
-            
-                <section class="navigation-bottom-mobile">
-                    <div class="navigation-bottom-group justify-around flex-wrap">
-                        <a href="javascript:void(0)">
-                            <button class="navigation-bottom-element active" type="button">
-                                <i class="fa fa-home icon-navigation"></i>
-                            </button>
-                        </a>
-                        <a href="javascript:void(0)" class="active">
-                            <button class="navigation-bottom-element" type="button">
-                                <i class="fas fa-file-alt icon-navigation"></i>
-                            </button>
-                        </a>
-                        <a href="javascript:void(0)">
-                            <button class="navigation-bottom-element" type="button">
-                               <i class="fas fa-bell icon-navigation"></i>
-                            </button>
-                        </a>
-                        <a href="javascript:void(0)">
-                            <button class="navigation-bottom-element" type="button">
-                                <i class="fa fa-user icon-navigation"></i>
-                            </button>
-                        </a>
-                    </div>
-                </section>            
+
+            <section class="navigation-bottom-mobile">
+                <div class="navigation-bottom-group justify-around flex-wrap">
+                    <a href="javascript:void(0)">
+                        <button class="navigation-bottom-element active" type="button">
+                            <img src="assets/image/icons/home_active_icon.svg" width="25px">
+                        </button>
+                    </a>
+                    <a href="javascript:void(0)" class="active">
+                        <button class="navigation-bottom-element" type="button">
+                            <img src="assets/image/icons/feeds_icon.svg" width="25px">
+                        </button>
+                    </a>
+                    <a href="javascript:void(0)">
+                        <button class="navigation-bottom-element relative" type="button">
+                            <div class="w-4 h-4 absolute left-3 rounded-full background-gradient-secondary text-white z-10 text-center flex justify-center items-center"
+                                style="font-size: 9px !important;top:-5px">2</div>
+                            <img src="assets/image/icons/notification_icon.svg" width="25px">
+                        </button>
+                    </a>
+                    <a href="javascript:void(0)">
+                        <button class="navigation-bottom-element" type="button">
+                            <img src="assets/image/icons/profile_icon.svg" width="25px">
+                        </button>
+                    </a>
+                </div>
+            </section>
         </div>
     </div>
     <script src="assets/js/jquery.min.js"></script>
@@ -401,6 +657,22 @@
     <script src="assets/fontawesome-free/js/all.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
+        document.addEventListener("copy", function (evt) {
+            // Change the copied text if you want
+            evt.clipboardData.setData("text/plain", "Copying is not allowed on this webpage");
+
+            // Prevent the default copy action
+            evt.preventDefault();
+        }, false);
+
+        function showSidebar() {
+            $('body').addClass('sidebar-open');
+        }
+
+        function hideSidebar() {
+            $('body').removeClass('sidebar-open');
+        }
+
         $('.slider-banner-homepage').slick({
             arrows: false,
             dots: true,
@@ -434,13 +706,14 @@
             infinite: false,
             slidesToScroll: 2
         });
-        $(window).scroll(function(){
-            if($(window).scrollTop() > 100){
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 100) {
                 $('.nav-group').addClass('nav-group-fixed');
-            }else{
+            } else {
                 $('.nav-group').removeClass('nav-group-fixed');
             }
         });
+
         function setFilter(evt) {
             $('.slider-filter-product-homepage button').removeClass('active');
             $(evt).addClass('active');
@@ -484,7 +757,6 @@
         }
         var deadlineFlashSale = new Date(Date.parse(new Date()) + 08 * 60 * 60 * 1000);
         initializeClockFlashSale('timeFlashDeal', deadlineFlashSale);
-
     </script>
 </body>
 
