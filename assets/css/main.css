@@ -17,7 +17,10 @@ body {
 .c-primary {
     color: #2F74E6;
 }
-
+.nav-left{
+    width: 24px;
+    height: 24px;
+}
 .c-secondary {
     color: #66737F;
 }
@@ -34,20 +37,20 @@ body {
 .slider-banner-homepage .banner-item {
     border-radius: 15px;
     cursor: pointer;
-    width: 340px !important;
-    height: 170px !important;
+    width: 400px !important;
+    height: 200px !important;
 }
 
-@media(max-width:420px) {
+@media(max-width:430px) {
     .slider-banner-homepage .banner-item {
-        width: 320px !important;
+        width: 340px !important;
         height: 160px !important;
     }
 }
 
 @media(max-width:380px) {
     .slider-banner-homepage .banner-item {
-        width: 280px !important;
+        width: 300px !important;
         height: 140px !important;
     }
 }
